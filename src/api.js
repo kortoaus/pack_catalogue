@@ -2,7 +2,7 @@ import axios from "axios";
 
 export let baseUrl;
 
-if (process.env.REACT_APP_DEV) {
+if (true) {
   baseUrl = "https://ktdportal.com";
 } else {
   baseUrl = "http://127.0.0.1:8000";
