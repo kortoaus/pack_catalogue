@@ -1,0 +1,112 @@
+@import url("http://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700");
+@import "mixins.scss";
+@import "colors.scss";
+body {
+  font-family: "Roboto";
+  margin: 0px;
+  padding: 0px;
+  font-size: 14px;
+  color: $black;
+}
+.headerWrap {
+  @include flex(row, center, center);
+  @include mobile {
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 0px;
+  }
+  font-size: 48px;
+  text-transform: uppercase;
+  font-weight: 500;
+  .logo {
+    max-height: 150px;
+    @include mobile {
+      max-height: 50px;
+    }
+  }
+  div {
+    text-align: left;
+  }
+  border-top: 5px solid $black;
+  border-bottom: 5px solid $black;
+  margin-top: 10px;
+}
+
+.MainWrap {
+  width: 100%;
+  @include flex(column, center, center);
+}
+.MainInnerWrap {
+  width: 100%;
+  max-width: 1200px;
+}
+
+.PacksWrap {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  @include mobile {
+    grid-template-columns: repeat(1, 1fr);
+    padding: 10px;
+  }
+  grid-gap: 10px;
+  .thumb {
+    img {
+      width: 70%;
+    }
+    min-height: 250px;
+    max-height: 250px;
+    overflow: hidden;
+    @include mobile {
+      // min-height: initial;
+      // max-height: initial;
+      // min-width: initial;
+      // max-width: initial;
+      img {
+        width: 80%;
+      }
+    }
+    @include flex(column, center, center);
+  }
+
+  .defaults {
+    border-left: 5px solid $black;
+    padding-left: 5px;
+    @include mobile {
+      margin-top: 10px;
+    }
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    .names {
+      div {
+      }
+      .origin {
+        font-size: 14px;
+        font-weight: 500;
+        text-transform: uppercase;
+      }
+      .en {
+        font-size: 20px;
+        font-weight: 500;
+        text-transform: uppercase;
+        margin-top: 2px;
+        margin-bottom: 2px;
+      }
+    }
+    .priceWrap {
+      .price {
+        @include mobile {
+          text-align: right;
+          font-size: 32px;
+        }
+        font-size: 28px;
+        font-weight: 500;
+        .unit {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}
