@@ -10,7 +10,6 @@ export const Header = () => {
         <br />
         Packed Meat Catalogue
       </div>
-      <img className="logo" src={logo} alt="umc" />
     </header>
   );
 };

@@ -8,14 +8,15 @@ body {
   font-size: 14px;
   color: $black;
 }
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
 .headerWrap {
   @include flex(row, center, center);
   @include mobile {
-    justify-content: center;
-    align-items: center;
-    font-size: 24px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    font-size: 28px;
     margin-top: 0px;
   }
   font-size: 48px;
@@ -23,21 +24,50 @@ body {
   font-weight: 500;
   .logo {
     max-height: 150px;
-    @include mobile {
-      max-height: 50px;
+    @include ipad {
+      display: none;
     }
   }
   div {
     text-align: left;
   }
-  border-top: 5px solid $black;
-  border-bottom: 5px solid $black;
-  margin-top: 10px;
+  border-top: 15px solid $black;
+  border-bottom: 15px solid $black;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.toolbarWrap {
+  // @include flex(row, space-around, center);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.BasicBtn {
+  background-color: $black;
+  color: $white;
+  font-weight: 500;
+  border-radius: 10px;
+  padding: 10px;
+  @include flex(column, center, center);
+  @include mobile {
+    padding: 5px;
+  }
+}
+
+.BasicBtn:hover {
+  opacity: 0.5;
 }
 
 .MainWrap {
   width: 100%;
   @include flex(column, center, center);
+  padding-bottom: 100px;
 }
 .MainInnerWrap {
   width: 100%;
@@ -47,9 +77,12 @@ body {
 .PacksWrap {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  padding: 10px;
+  @include ipadL {
+    grid-template-columns: repeat(3, 1fr);
+  }
   @include mobile {
     grid-template-columns: repeat(1, 1fr);
-    padding: 10px;
   }
   grid-gap: 10px;
   .thumb {
@@ -60,13 +93,13 @@ body {
     max-height: 250px;
     overflow: hidden;
     @include mobile {
-      // min-height: initial;
-      // max-height: initial;
-      // min-width: initial;
-      // max-width: initial;
       img {
         width: 80%;
       }
+      min-height: 200px;
+      max-height: 200px;
+      margin-top: 20px;
+      margin-bottom: 10px;
     }
     @include flex(column, center, center);
   }
@@ -106,6 +139,142 @@ body {
         .unit {
           font-size: 16px;
         }
+      }
+    }
+  }
+}
+
+.stickyBtn {
+  position: fixed;
+  bottom: 20px;
+  height: 50px;
+  width: 90%;
+  @include flex(column, center, center);
+  text-align: center;
+  padding: 5px;
+  background-color: $black;
+  border-radius: 10px;
+  font-size: 24px;
+  color: $white;
+  font-weight: bold;
+}
+
+.infoWrap {
+  @include flex(column, center, center);
+}
+.infoInnerWrap {
+  width: 100%;
+  max-width: 768px;
+  display: grid;
+  grid-template-columns: 1fr;
+  padding-bottom: 30px;
+  .Btns {
+    @include flex(row, space-around, center);
+    margin-top: 10px;
+  }
+  .closeBtn {
+    padding: 5px;
+    border: 1px solid $black;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 10px;
+  }
+  .title {
+    padding: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+  .processing {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    .pros {
+      .icon {
+        @include flex(column, center, center);
+        img {
+          width: 70px;
+        }
+        @include mobile {
+          img {
+            width: 40%;
+          }
+        }
+      }
+      .tag {
+        margin-top: 15px;
+        text-align: center;
+        font-size: 18px;
+        font-weight: 500;
+      }
+    }
+  }
+  .payment {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+    span {
+      font-weight: 500;
+      color: $red;
+    }
+  }
+  .acc {
+    @include flex(column, center, center);
+    .accInner {
+      padding: 10px;
+      margin: 10px;
+      border: 1px solid $border;
+      border-radius: 10px;
+      font-size: 18px;
+      font-weight: bold;
+      div {
+        text-align: center;
+      }
+      .bank {
+        font-size: 16px;
+        font-weight: initial;
+        color: $grey;
+      }
+      .bsb {
+        margin-top: 10px;
+        font-size: 20px;
+      }
+      .number {
+        font-size: 20px;
+      }
+    }
+  }
+  .contact {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    @include mobile {
+      grid-template-columns: repeat(1, 1fr);
+      padding: 5px;
+    }
+    grid-gap: 5px;
+    .cont {
+      border: 1px solid $border;
+      padding: 10px;
+      border-radius: 10px;
+      div {
+        text-align: center;
+      }
+      .tag {
+        font-size: 18px;
+        font-weight: bold;
+      }
+      .number {
+        font-size: 16px;
+        font-weight: 500;
+        margin-top: 5px;
+        margin-bottom: 5px;
+      }
+      .btn {
+        padding: 5px;
+        background-color: $black;
+        color: $white;
+        font-weight: 500;
       }
     }
   }
