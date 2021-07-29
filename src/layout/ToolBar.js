@@ -14,7 +14,7 @@ export const ToolBar = ({ handler, search }) => {
       <div className="toolbarWrap">
         <BasicBtn name="All" handler={() => handler("")} />
         <BasicBtn name="Wagyu" handler={() => handler("Wagyu")} />
-        <BasicBtn name="Black Angus" handler={() => handler("Black Angus")} />
+        <BasicBtn name="Angus" handler={() => handler("Angus")} />
         <BasicBtn name="Beef" handler={() => handler("Beef")} />
       </div>
       <div className="searchWrap">
