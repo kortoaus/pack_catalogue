@@ -35,14 +35,22 @@ export const Contents = ({ packs }) => {
                     <div className="en">{p.name_en}</div>
                     <div className="ko">{p.name_ko}</div>
                     <div className="cn">{p.name_cn}</div>
+                    <div className="weight">{`${p.w_min}kg ~ ${p.w_max}kg per Pack`}</div>
                   </div>
                   <div className="priceWrap">
                     <div className="price">
                       ${p.price}
                       <span className="unit">/kg</span>
                     </div>
+                    <div className="price approxp">
+                      <div className="approx">Approx.</div>
+
+                      <div>
+                        ${(((p.w_min + p.w_max) / 2) * p.price).toFixed(0)}
+                        <span className="unit">/pk</span>
+                      </div>
+                    </div>
                   </div>
-                  <div className="weight">{`${p.w_min}kg ~ ${p.w_max}kg per Pack`}</div>
                 </div>
               </div>
             );

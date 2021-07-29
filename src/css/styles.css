@@ -258,6 +258,16 @@ a {
   font-size: 16px;
 }
 
+.PacksWrap .defaults .priceWrap .approx {
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+.PacksWrap .defaults .priceWrap .approxp {
+  font-size: 20px;
+  color: #eb4d4b;
+}
+
 .stickyBtn {
   position: fixed;
   bottom: 20px;
