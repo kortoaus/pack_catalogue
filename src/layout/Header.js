@@ -6,9 +6,9 @@ export const Header = () => {
     <header className="headerWrap">
       <img className="logo" src={logo} alt="umc" />
       <div>
-        UMC X UNCLES' BUTCHERY
+        UMC & UNCLES
         <br />
-        Packed Meat Catalogue
+        PRIMAL CUTS
       </div>
     </header>
   );

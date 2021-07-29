@@ -3,12 +3,16 @@ import { ToolBar } from "./ToolBar";
 
 export const Contents = ({ packs }) => {
   const [cat, setCat] = useState("");
+  const [search, setSearch] = useState("");
   return (
     <>
-      <ToolBar handler={setCat} />
+      <ToolBar handler={setCat} search={setSearch} />
       <div className="PacksWrap">
         {packs.map((p, index) => {
-          if (p.origin.includes(cat)) {
+          if (
+            p.origin.includes(cat) &&
+            p.name_en.toUpperCase().includes(search.toUpperCase())
+          ) {
             return (
               <div key={`pack${index}`}>
                 <div className="thumb">
@@ -22,9 +26,12 @@ export const Contents = ({ packs }) => {
 
                 <div className="defaults">
                   <div className="names">
+                    <div className="weight">{p.brand}</div>
+
                     <div className="origin">
                       {p.origin} {p.mb ? ` / MB${p.mb}` : null}
                     </div>
+
                     <div className="en">{p.name_en}</div>
                     <div className="ko">{p.name_ko}</div>
                     <div className="cn">{p.name_cn}</div>
