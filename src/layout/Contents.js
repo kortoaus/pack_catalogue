@@ -4,6 +4,14 @@ import { ToolBar } from "./ToolBar";
 export const Contents = ({ packs }) => {
   const [cat, setCat] = useState("");
   const [search, setSearch] = useState("");
+
+  const imgConvert = (fileno, original = false) => {
+    let format = navigator.userAgent.indexOf("safari") ? "png" : "webp";
+    let origin = original ? "origin" : "thumb";
+
+    return `https://unclesbutchery.com/packs/${format}/${origin}/${fileno}.${format}`;
+  };
+
   return (
     <>
       <ToolBar handler={setCat} search={setSearch} />
@@ -17,10 +25,7 @@ export const Contents = ({ packs }) => {
               <div key={`pack${index}`}>
                 <div className="thumb">
                   {p.thumbnail !== "" ? (
-                    <img
-                      src={`https://unclesbutchery.com/packs/thumb/${p.thumbnail}.webp`}
-                      alt={p.name_en}
-                    />
+                    <img src={imgConvert(p.thumbnail, false)} alt={p.name_en} />
                   ) : null}
                 </div>
 
