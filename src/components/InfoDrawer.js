@@ -2,8 +2,8 @@ import { Drawer } from "@material-ui/core";
 import phone from "../svgs/phone.svg";
 import response from "../svgs/response.svg";
 import delivery from "../svgs/delivery.svg";
-
 import React from "react";
+import wechat from "../svgs/wechat.png";
 
 export const InfoDrawer = ({ open, close }) => {
   return (
@@ -38,14 +38,14 @@ export const InfoDrawer = ({ open, close }) => {
               <div className="tag">Chinese 🇨🇳</div>
               <div className="hours">9:00AM To 5:00PM</div>
               <div className="number">+61 478 756 497</div>
+              <div className="number">Wechat: United_meat_co</div>
               <a href="tel://+61478756497">
                 <div className="btn">Call Now</div>
               </a>
-              <hr></hr>
-              <a href="https://u.wechat.com/kALjlVWZETTYGpiRJwaft8M">
-                <div className="btn">Wechat</div>
-              </a>
             </div>
+          </div>
+          <div className="wechat">
+            <img src={wechat} alt="wechatqr" />
           </div>
 
           <div className="title">Processing</div>

@@ -305,3 +305,11 @@ a {
     }
   }
 }
+
+.wechat {
+  @include flex(column, center, center);
+  padding-top: 30px;
+  img {
+    max-width: 50%;
+  }
+}
