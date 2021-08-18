@@ -41,6 +41,10 @@ export const InfoDrawer = ({ open, close }) => {
               <a href="tel://+61478756497">
                 <div className="btn">Call Now</div>
               </a>
+              <hr></hr>
+              <a href="https://u.wechat.com/kALjlVWZETTYGpiRJwaft8M">
+                <div className="btn">Wechat</div>
+              </a>
             </div>
           </div>
 
