@@ -60,7 +60,11 @@ export const Contents = ({ packs }) => {
                       <div className="approx">Approx.</div>
 
                       <div>
-                        ${(((p.w_min + p.w_max) / 2) * p.price).toFixed(0)}
+                        $
+                        {(
+                          ((p.w_min + p.w_min) / 2) *
+                          (p.salePrice ? p.salePrice : p.price)
+                        ).toFixed(0)}
                         <span className="unit">/pk</span>
                       </div>
                     </div>
