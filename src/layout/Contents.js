@@ -19,7 +19,7 @@ export const Contents = ({ packs }) => {
       <ToolBar handler={setCat} search={setSearch} />
       <div className="PacksWrap">
         {packs.map((p, index) => {
-          console.log(cat, " / ", p.origin);
+          // console.log(cat, " / ", p.origin);
           if (
             p.origin.includes(cat.toUpperCase()) &&
             p.name_en.toUpperCase().includes(search.toUpperCase())
