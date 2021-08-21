@@ -213,6 +213,15 @@ a {
   }
 }
 
+.PacksWrap .specialBadge {
+  background-color: #eb4d4b;
+  color: #fff;
+  padding: 5px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 24px;
+}
+
 .PacksWrap .defaults {
   border-left: 5px solid #212121;
   padding-left: 5px;
@@ -242,6 +251,18 @@ a {
   margin-bottom: 2px;
 }
 
+.PacksWrap .defaults .priceWrap .wasPrice {
+  color: #eb4d4b;
+  text-decoration: line-through;
+  font-size: 22px;
+}
+
+@media (max-width: 425px) {
+  .PacksWrap .defaults .priceWrap .wasPrice {
+    text-align: right;
+  }
+}
+
 .PacksWrap .defaults .priceWrap .price {
   font-size: 28px;
   font-weight: 500;
@@ -265,7 +286,6 @@ a {
 
 .PacksWrap .defaults .priceWrap .approxp {
   font-size: 20px;
-  color: #eb4d4b;
 }
 
 .stickyBtn {

@@ -6,10 +6,12 @@ export const Contents = ({ packs }) => {
   const [search, setSearch] = useState("");
 
   const imgConvert = (fileno, original = false) => {
-    let format = navigator.userAgent.indexOf("safari") ? "png" : "webp";
-    let origin = original ? "origin" : "thumb";
+    const format = navigator.userAgent.indexOf("safari") ? "png" : "webp";
+    const origin = original ? "origin" : "thumb";
 
-    return `https://unclesbutchery.com/packs/${format}/${origin}/${fileno}.${format}`;
+    const filename = fileno ? fileno : "0000";
+
+    return `https://unclesbutchery.com/packs/${format}/${origin}/${filename}.${format}`;
   };
 
   return (
@@ -22,7 +24,10 @@ export const Contents = ({ packs }) => {
             p.name_en.toUpperCase().includes(search.toUpperCase())
           ) {
             return (
-              <div key={`pack${index}`}>
+              <div className="packCard" key={`pack${index}`}>
+                {p.salePrice ? (
+                  <div className="specialBadge">Special</div>
+                ) : null}
                 <div className="thumb">
                   {p.thumbnail !== "" ? (
                     <img src={imgConvert(p.thumbnail, false)} alt={p.name_en} />
@@ -43,10 +48,14 @@ export const Contents = ({ packs }) => {
                     <div className="weight">{`${p.w_min}kg ~ ${p.w_max}kg per Pack`}</div>
                   </div>
                   <div className="priceWrap">
+                    {p.salePrice ? (
+                      <div className="wasPrice">${p.price}/kg</div>
+                    ) : null}
                     <div className="price">
-                      ${p.price}
+                      ${p.salePrice ? p.salePrice : p.price}
                       <span className="unit">/kg</span>
                     </div>
+
                     <div className="price approxp">
                       <div className="approx">Approx.</div>
 

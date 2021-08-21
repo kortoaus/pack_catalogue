@@ -101,6 +101,10 @@ a {
     grid-template-columns: repeat(1, 1fr);
   }
   grid-gap: 10px;
+
+  .packCard {
+  }
+
   .thumb {
     img {
       width: 70%;
@@ -117,7 +121,17 @@ a {
       margin-top: 20px;
       margin-bottom: 10px;
     }
+
     @include flex(column, center, center);
+  }
+
+  .specialBadge {
+    background-color: $red;
+    color: $white;
+    padding: 5px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 24px;
   }
 
   .defaults {
@@ -145,6 +159,15 @@ a {
       }
     }
     .priceWrap {
+      .wasPrice {
+        color: $red;
+        text-decoration: line-through;
+        font-size: 22px;
+
+        @include mobile {
+          text-align: right;
+        }
+      }
       .price {
         @include mobile {
           text-align: right;
@@ -162,7 +185,6 @@ a {
       }
       .approxp {
         font-size: 20px;
-        color: $red;
       }
     }
   }
