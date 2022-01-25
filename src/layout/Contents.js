@@ -6,7 +6,8 @@ export const Contents = ({ packs }) => {
   const [search, setSearch] = useState("");
 
   const imgConvert = (fileno, original = false) => {
-    const format = navigator.userAgent.indexOf("safari") ? "png" : "webp";
+    // const format = navigator.userAgent.indexOf("safari") ? "png" : "webp";
+    const format = "png";
     const origin = original ? "origin" : "thumb";
     const filename = fileno ? fileno : "0000";
 
@@ -30,7 +31,7 @@ export const Contents = ({ packs }) => {
                 ) : null}
                 <div className="thumb">
                   {p.thumbnail !== "" ? (
-                    <img src={imgConvert(p.thumbnail, false)} alt={p.name_en} />
+                    <img src={imgConvert(p.thumbnail, true)} alt={p.name_en} />
                   ) : null}
                 </div>
 
