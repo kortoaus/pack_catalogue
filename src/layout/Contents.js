@@ -8,7 +8,6 @@ export const Contents = ({ packs }) => {
   const imgConvert = (fileno, original = false) => {
     const format = navigator.userAgent.indexOf("safari") ? "png" : "webp";
     const origin = original ? "origin" : "thumb";
-
     const filename = fileno ? fileno : "0000";
 
     return `https://unclesbutchery.com/packs/${format}/${origin}/${filename}.${format}`;
