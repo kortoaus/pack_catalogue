@@ -37,7 +37,6 @@ export const InfoDrawer = ({ open, close }) => {
             <div className="cont">
               <div className="tag">Chinese 🇨🇳</div>
               <div className="hours">9:00AM To 5:00PM</div>
-              {/* <div className="number">+61 478 756 497</div> */}
               <div className="number">Wechat: United_meat_co</div>
               <a href="tel://+61478756497">
                 <div className="btn">Call Now</div>
